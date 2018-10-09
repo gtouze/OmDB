@@ -8,4 +8,24 @@
 
 <ion-content padding>
   <h1>Liste des films</h1>
+  <ion-list>
+    <span *ngFor="let people of getListeFilm()">
+      <ion-item>
+        <h1>{{people.name | uppercase}}</h1>
+        <h2
+          [ngClass]="{'pink-text': people.gender == 'female', 'blue-text': people.gender == 'male'}">
+          {{people.gender}}
+        </h2>
+        <div [ngSwitch]='people.gender'>
+          <div *ngSwitchCase="'female'">
+            <p>{{people.hair_color}}</p>
+          </div>
+          <div *ngSwitchCase="'male'">
+            <p>{{people.eye_color}}</p>
+          </div>
+        </div>
+        <p>{{people.height}} / {{people.mass}}</p>
+      </ion-item>
+    </span>
+  </ion-list>
 </ion-content>

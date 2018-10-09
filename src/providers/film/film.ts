@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -9,10 +8,6 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class FilmProvider {
-
-  constructor(public http: HttpClient) {
-    console.log('Hello FilmProvider Provider');
-  }
 
   public film = [
     {
@@ -52,5 +47,8 @@ export class FilmProvider {
       synopsie : "Notre famille de monstres préférée embarque pour une croisière de rêve afin que Drac puisse enfin souffler un peu et savourer des vacances au lieu de s’occuper de tout le monde à l’hôtel. Mais la mystérieuse Ericka, la capitaine humaine du navire, cache un secret qui les menace tous… ",
     }
   ];
+
+  constructor() {
+  }
 
 }
